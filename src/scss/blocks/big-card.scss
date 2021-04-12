@@ -1,0 +1,168 @@
+@import "../constants";
+
+.big-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 350px;
+	//min-height: 172px;
+
+	border-radius: 2px;
+	outline: none;
+	cursor: pointer;
+
+	transition: filter $transition-base;
+	
+	.icon {
+		
+		@include filter-text-main;
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		padding: 5px 20px 5px 20px;
+
+		background-color: $color-white;
+
+		transition: background-color $transition-base;
+	}
+
+	&__city {
+		margin-left: 20px;
+
+		font-size: 30px;
+		line-height: 36px;
+
+		transition: color $transition-base;
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		padding: 16px 24px 24px 20px;
+
+		background-color: $color-light-grey;
+
+		transition: background-color $transition-base;
+	}
+
+	&__weather-conditions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-bottom: -2px;
+
+		span {
+			margin-right: 10px;
+			margin-bottom: 2px;
+			
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	
+	&__wind {
+		display: flex;
+		align-items: center;
+		margin-top: 12px;
+	}
+
+	&__wind-info {
+		margin-left: 10px;
+
+		color: $color-text-light-green;
+
+		opacity: 0.8;
+
+		transition: color $transition-base;
+	}
+
+	&__temperature {
+		margin-left: auto;
+
+		font-size: 64px;
+		line-height: 62px;
+		letter-spacing: -0.05em;
+
+		opacity: 0.8;
+
+		transition: color $transition-base;
+	}
+
+	&:hover &__city {
+		color: $color-text-white;
+	}
+
+	&:hover &__temperature,
+	&:hover &__wind-info {
+		color: $color-text-white;
+	}
+
+	&:hover &__header {
+		background-color: $color-green-light;
+	}
+
+	&:hover &__content {
+		background-color: $color-green-main;
+		
+		.icon {
+			@include filter-white;
+		}
+	}
+
+	&.active &__city {
+		color: $color-text-white;
+	}
+
+	&.active &__temperature,
+	&.active &__wind-info {
+		color: $color-text-white;
+	}
+
+	&.active &__header {
+		background-color: $color-green-light;
+	}
+
+	&.active &__content {
+		background-color: $color-green-main;
+
+		.icon {
+			@include filter-white;
+		}
+	}
+
+	&:active {
+		filter: drop-shadow(0 5px 10px rgba(11, 23, 78, 0.5));
+	}
+
+	&--shadow {
+		opacity: 0.3;
+		background-color: $color-green-light;
+	}
+
+	&--shadow &__header {
+		background-color: $color-transparent;
+	}
+
+	&--shadow &__content {
+		background-color: $color-green-deep;
+	}
+
+	&--shadow &__city,
+	&--shadow &__temperature,
+	&--shadow &__wind-info {
+		color: $color-text-white;
+	}
+
+	&--empty {
+		min-height: 172px;
+		background-color: rgba(247, 248, 255, 0.3);
+		border: 2px dashed $color-border;
+	}
+
+}
+

@@ -1,0 +1,127 @@
+@import "../constants";
+
+.input-wrapper {
+	display: flex;
+
+	input {
+		border-radius: 2px;
+	}
+
+	&--search input {
+		width: 254px;
+		padding: 8px 20px;
+
+		color: $color-text-input;
+
+		background-color: $color-input-base;
+		border: none;
+		outline: none;
+
+		transition: background-color $transition-base;
+
+		&:hover {
+			background-color: $color-input-hover;
+		}
+
+		&:focus::placeholder {
+			opacity: 0;
+		}
+
+		&:focus::-ms-input-placeholder {
+			opacity: 0;
+		}
+
+		&:focus {
+			background-color: $color-input-focus;
+		}
+
+		&::placeholder {
+			color: $color-text-placeholder;
+
+			transition: opacity $transition-base;
+		}
+
+		&::-ms-input-placeholder {
+			color: $color-text-placeholder;
+
+			transition: opacity $transition-base;
+		}
+	}
+
+	&--checkbox {
+		
+		label {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 40px;
+			height: 40px;
+
+			background-color: $color-label-base;
+			border-radius: 2px;
+			cursor: pointer;
+
+			transition: background-color $transition-base,
+			box-shadow $transition-base;
+
+			user-select: none;
+		}
+
+		label:hover {
+			background-color: $color-label-hover;
+			box-shadow: 0 1px 3px rgba(11, 23, 78, 0.5);
+		}
+
+		label:active {
+			background-color: $color-label-active;
+		}
+
+		label > span {
+			transition: opacity $transition-base;
+			@include filter-white;
+		}
+
+		label:active > span {
+			opacity: 0.3;
+		}
+
+		input {
+			position: absolute;
+
+			width: 1px;
+			height: 1px;
+			margin: -1px;
+
+			clip: rect(0 0 0 0);
+			
+			&:not(#alphabet-sort) {
+				
+				& + label > .icon {
+					width: 30px;
+					height: 30px;
+				}
+				
+				&:checked + label {
+					background-color: $color-label-active;
+					box-shadow: none;
+				}
+
+				&:checked + label:hover {
+					background-color: $color-label-hover-checked;
+				}
+
+				&:checked:focus + label {
+					background-color: $color-label-hover-checked;
+				}
+			}
+		}
+
+		input:focus + label {
+			background-color: $color-label-hover;
+		}
+
+		input:disabled + label {
+			opacity: 0.5;
+		}
+	}
+}

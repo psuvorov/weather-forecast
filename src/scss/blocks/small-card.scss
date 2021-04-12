@@ -1,0 +1,62 @@
+@import "../constants";
+
+.small-card {
+	display: flex;
+	align-items: center;
+	width: 350px;
+	padding: 12px 20px;
+
+	background-color: $color-light-grey;
+	border-radius: 2px;
+	outline: none;
+	cursor: pointer;
+
+	transition: background-color $transition-base, filter $transition-base;
+
+	&:hover {
+		background-color: $color-green-light;
+	}
+
+	&:hover &__city,
+	&:hover &__temperature {
+		color: $color-text-white;
+	}
+
+	&__city {
+		flex-grow: 1;
+		margin-right: 20px;
+
+		transition: color $transition-base;
+	}
+
+	&__temperature {
+		margin-right: 20px;
+
+		font-size: 24px;
+		line-height: 24px;
+		letter-spacing: -0.02em;
+
+		transition: color $transition-base;
+	}
+
+	&:active {
+		filter: drop-shadow(0 5px 10px rgba(11, 23, 78, 0.5));
+	}
+
+	&--shadow {
+		background-color: $color-shadow-main;
+	}
+
+	&--shadow &__city,
+	&--shadow &__temperature {
+		color: $color-text-white;
+	}
+
+	&--empty {
+		min-height: 56px;
+		background-color: rgba(247, 248, 255, 0.3);
+		border: 2px dashed $color-border;
+	}
+
+}
+

@@ -1,0 +1,32 @@
+@import "../constants";
+
+.pin {
+	display: block;
+	width: 16px;
+	height: 16px;
+
+	background-color: $color-white;
+	border: 4px solid $color-green-main;
+	border-radius: 50%;
+	cursor: pointer;
+
+	transition: background-color $transition-base, border $transition-base, box-shadow $transition-base;
+
+	&:hover {
+		background-color: $color-green-light;
+	}
+
+	&:active {
+		background-color: $color-green-main;
+		border: 4px solid $color-white;
+		box-shadow: 0 0 0 4px $color-green-main, 0 5px 10px rgba(11, 23, 78, 0.5);
+	}
+
+	&--temporarily {
+		position: relative;
+		top: 50%;
+		left: 50%;
+	}
+}
+
+

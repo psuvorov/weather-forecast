@@ -1,0 +1,41 @@
+$font-family: "OpenSansCondensed", "Arial", sans-serif;
+
+$color-white: #ffffff;
+$color-green-main: #3dcca2;
+$color-green-deep: #24ad88;
+$color-green-light: #50d1ae;
+$color-green-lightest: #dee5fe;
+$color-grey: #c4c4c4;
+$color-light-grey: #f7f8ff;
+$color-transparent: rgba(0, 0, 0, 0);
+
+$color-label-base: #56dcb8;
+$color-label-hover: #54e0bb;
+$color-label-active: #24ad88;
+$color-label-hover-checked: #25b68f;
+
+$color-shadow-main: #b6c3fc;
+$color-shadow-second: #a8b6f4;
+
+$color-input-base: #24ad88;
+$color-input-hover: #25b68f;
+$color-input-focus: #f7f8ff;
+
+$color-text-white: #ffffff;
+$color-text-light-white: rgba(255, 255, 255, 0.8);
+$color-text-main: #20b17f;
+$color-text-light-green: rgba(96, 140, 120, 0.8);
+$color-text-help: rgba(78, 111, 170, 0.5);
+$color-text-grey: #c3d0e7;
+$color-text-input: #50d1ae;
+$color-text-placeholder: #54d7b1;
+
+$color-icon-green: #73bcfe;
+$color-icon-grey: #c3d0e7;
+
+$color-border: #c3d0e7;
+
+$transition-base: 0.15s ease-in-out;
+
+@mixin filter-white { filter: invert(96%) sepia(96%) saturate(18%) hue-rotate(234deg) brightness(105%) contrast(107%) };
+@mixin filter-text-main {filter: invert(48%) sepia(97%) saturate(340%) hue-rotate(108deg) brightness(98%) contrast(92%)};

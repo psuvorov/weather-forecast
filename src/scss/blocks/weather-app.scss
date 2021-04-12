@@ -1,0 +1,38 @@
+@import "../constants";
+
+.weather-app {
+	display: flex;
+	width: 100%;
+	min-width: 1080px;
+	height: 100vh;
+	min-height: 880px;
+	overflow: hidden;
+
+	&__content {
+		position: absolute;
+		z-index: 401;
+
+		flex-shrink: 0;
+		width: 712px;
+		height: 100vh;
+		min-height: 880px;
+		overflow: hidden;
+
+		background: $color-green-lightest;
+		box-shadow: 0 0 20px rgba(11, 23, 78, 0.5);
+
+		zoom: .8;
+		opacity: .8;
+		transition: opacity .2s;
+		
+		&:hover {
+			opacity: unset;
+		}
+	}
+
+	&__map {
+		flex-grow: 1;
+		width: auto;
+		height: 100%;
+	}
+}
